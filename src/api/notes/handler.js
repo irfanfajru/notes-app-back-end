@@ -1,5 +1,5 @@
-const { response } = require("@hapi/hapi/lib/validation");
 const ClientError = require('../../exceptions/ClientError');
+
 class NotesHandler {
   constructor(service, validator) {
     this._service = service;
@@ -115,7 +115,7 @@ class NotesHandler {
     }
   }
 
-  async deleteNoteByIdHandler(request) {
+  async deleteNoteByIdHandler(request, h) {
     try {
       const { id } = request.params;
       await this._service.deleteNoteById(id);
