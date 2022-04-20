@@ -59,7 +59,7 @@ class UsersHandler {
           status: 'fail',
           message: error.message,
         });
-        response.code(error.message);
+        response.code(error.statusCode);
         return response;
       }
       // Server ERROR!
